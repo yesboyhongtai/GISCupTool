@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C21A68AE-DFEF-48A0-B18F-58ADFA905B49}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PolygonDemo</RootNamespace>
+    <AssemblyName>PolygonDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BruTile">
+      <HintPath>ref\BruTile.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI">
+      <HintPath>ref\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>ref\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjNET">
+      <HintPath>ref\ProjNET.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpMap">
+      <HintPath>ref\SharpMap.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpMap.UI">
+      <HintPath>ref\SharpMap.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LineDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LineDetails.Designer.cs">
+      <DependentUpon>LineDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LineModel.cs" />
+    <Compile Include="PointDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointDetails.Designer.cs">
+      <DependentUpon>PointDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShpDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShpDemo.Designer.cs">
+      <DependentUpon>ShpDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LoadOperation.cs" />
+    <Compile Include="Model\PointModel.cs" />
+    <Compile Include="SimplifiedLineDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimplifiedLineDetails.Designer.cs">
+      <DependentUpon>SimplifiedLineDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ExtMethods.cs" />
+    <Compile Include="Tools\LayerTools.cs" />
+    <Compile Include="Tools\StreamHelper.cs" />
+    <Compile Include="Tools\TileSystem.cs" />
+    <EmbeddedResource Include="LineDetails.resx">
+      <DependentUpon>LineDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointDetails.resx">
+      <DependentUpon>PointDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ShpDemo.resx">
+      <DependentUpon>ShpDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimplifiedLineDetails.resx">
+      <DependentUpon>SimplifiedLineDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OutfallSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PumpSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
